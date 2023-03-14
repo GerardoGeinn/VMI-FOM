@@ -39,13 +39,13 @@ $usuario = $_SESSION['usuario'];
                             <div class="sb-sidenav-menu-heading">Menú</div>
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Forecast
                             </a>
                            <!-- <div class="sb-sidenav-menu-heading">Interface</div>-->
        
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                F.O.C
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -61,7 +61,7 @@ $usuario = $_SESSION['usuario'];
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
+                                    
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
@@ -76,7 +76,7 @@ $usuario = $_SESSION['usuario'];
                             <!--  <div class="sb-sidenav-menu-heading">Addons</div>-->
                             <a class="nav-link" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                                CLARO
                             </a>
                             <a class="nav-link" href="comercialt.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
