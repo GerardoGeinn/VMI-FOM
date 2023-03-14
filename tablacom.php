@@ -2,11 +2,10 @@
 
 $resp="";
 
-    $resp = "SELECT 
-    DOC.CSERIEDOCUMENTO AS SERIE, DOC.CFOLIO AS FOLIO, ISNULL(AG.CNOMBREAGENTE,'')AS AGENTE, DOC.CTOTALUNIDADES AS CANTIDAD, 
-    PRO.CCODIGOPRODUCTO AS CODIGO,PRO.CNOMBREPRODUCTO AS DESCRIPCION, ALM.CNOMBREALMACEN AS ALMACEN, MOV.CPRECIO AS PRECIOP, 
-    CONVERT(VARCHAR,DOC.CFECHA,103) AS FECHA, 
-    DOC.CTOTAL AS MONTOT
+    $resp = "SELECT TOP 100
+    DOC.CSERIEDOCUMENTO AS SERIE, CONVERT(INT,DOC.CFOLIO) AS FOLIO, ISNULL(AG.CNOMBREAGENTE,'')AS AGENTE, DOC.CTOTALUNIDADES AS CANTIDAD, 
+    PRO.CCODIGOPRODUCTO AS CODIGO,PRO.CNOMBREPRODUCTO AS DESCRIPCION, ALM.CNOMBREALMACEN AS ALMACEN, MOV.CPRECIO AS PRECIOP,  
+    CONVERT(VARCHAR,DOC.CFECHA,103) AS FECHA, DOC.CTOTAL AS MONTOT
     FROM admProductos PRO
     LEFT OUTER JOIN dbo.admMovimientos MOV ON PRO.CIDPRODUCTO= MOV.CIDPRODUCTO 
     LEFT OUTER JOIN dbo.admDocumentos DOC ON MOV.CIDDOCUMENTO = DOC.CIDDOCUMENTO 
@@ -27,9 +26,10 @@ $respuesta = 0;
     $respuesta = $res->fetchAll(PDO::FETCH_OBJ); 
 
  ?>
-  <div class="table-responsive-xxl">
+ <div class="container mb-4">
+  <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <table class="table table-sm table-striped table-hover table-bordered" id="tablaReport">
+        <table id="tablaReport" class="table table-sm table-striped table-hover table-bordered">
             <thead>         
             
                 <th>SERIE</th>
@@ -45,28 +45,29 @@ $respuesta = 0;
                 <th>MONTO TOTAL</th>
                           
             </thead>
-        <tbody > 
-            <?php
-            foreach($respuesta as $mostrar):
-            ?>
+            <tbody > 
+                <?php
+                foreach($respuesta as $mostrar):
+                ?>
 
-            <tr>
-                <td><?php echo $mostrar->SERIE?></td>
-                <td><?php echo $mostrar->FOLIO?></td>
-                <td><?php echo $mostrar->AGENTE?></td>
-                <td><?php echo $mostrar->CANTIDAD?></td>
-                <td><?php echo $mostrar->CODIGO?></td>
-                <td><?php echo $mostrar->DESCRIPCION?></td>
-                <td><?php echo $mostrar->ALMACEN?></td>
-                <td><?php echo $mostrar->FECHA?></td>
-                <td><?php echo $mostrar->PRECIOP?></td>
-                <td><?php echo $mostrar->MONTOT?></td>
-            </tr>
-            <?php 
-            endforeach;
-            ?>
-         </tbody>
+                <tr>
+                    <td><?php echo $mostrar->SERIE?></td>
+                    <td><?php echo $mostrar->FOLIO?></td>
+                    <td><?php echo $mostrar->AGENTE?></td>
+                    <td><?php echo $mostrar->CANTIDAD?></td>
+                    <td><?php echo $mostrar->CODIGO?></td>
+                    <td><?php echo $mostrar->DESCRIPCION?></td>
+                    <td><?php echo $mostrar->ALMACEN?></td>
+                    <td><?php echo $mostrar->FECHA?></td>
+                    <td><?php echo $mostrar->PRECIOP?></td>
+                    <td><?php echo $mostrar->MONTOT?></td>
+                </tr>
+                <?php 
+                endforeach;
+                ?>
+            </tbody>
         </table>
+        </div>
     </div>
   </div>        
-<!-- <script src="tcomercial.js"></script> -->
+         <script src="tcomercial.js"></script>
