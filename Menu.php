@@ -84,7 +84,7 @@ $usuario = $_SESSION['usuario'];
                             </a>
                             <a class="nav-link" href="colaborador.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Al Final
+                                Pedidos
                             </a>
                         </div>
                     </div>
