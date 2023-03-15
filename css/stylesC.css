@@ -68,6 +68,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* padding: 2px; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -330,7 +331,7 @@ th {
 }
 
 label {
-  display: inline-block;
+  display: inline;
 }
 
 button {
@@ -666,7 +667,7 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 39rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -1171,7 +1172,7 @@ progress {
 
   .col-md-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 56%;
   }
 
   .col-md-6 {
@@ -4819,7 +4820,7 @@ textarea.form-control-lg {
 .page-link, .dataTable-pagination a {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: #000;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
