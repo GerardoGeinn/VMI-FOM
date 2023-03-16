@@ -37,6 +37,7 @@ $respuesta = 0;
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title> Comercial-VMI</title>
+        <link rel="shortcut icon" href="public/img/logos-FOC-blanco-V.png">
         <!--DT--> 
         <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> -->
         <!-- <link href= "https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"/> -->
