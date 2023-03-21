@@ -8,7 +8,7 @@ $usuario = $_SESSION['usuario'];
 <html lang="en">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">Home</a>
+            <a class="navbar-brand ps-3" href="index.php">INICIO</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -39,13 +39,13 @@ $usuario = $_SESSION['usuario'];
                             <div class="sb-sidenav-menu-heading">Menú</div>
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Forecast
                             </a>
                            <!-- <div class="sb-sidenav-menu-heading">Interface</div>-->
        
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                F.O.C
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -61,7 +61,7 @@ $usuario = $_SESSION['usuario'];
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
+                                    
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
@@ -76,7 +76,7 @@ $usuario = $_SESSION['usuario'];
                             <!--  <div class="sb-sidenav-menu-heading">Addons</div>-->
                             <a class="nav-link" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                                CLARO
                             </a>
                             <a class="nav-link" href="comercialt.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -84,7 +84,7 @@ $usuario = $_SESSION['usuario'];
                             </a>
                             <a class="nav-link" href="colaborador.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Al Final
+                                Pedidos
                             </a>
                         </div>
                     </div>

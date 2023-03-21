@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Charts - SB Admin</title>
+        <link rel="shortcut icon" href="public/img/logos-FOC-blanco-V.png">
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
