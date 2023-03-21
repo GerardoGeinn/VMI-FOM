@@ -59,67 +59,68 @@ $res = $conexion->query($sql);
                         <i class="fas fa-table me-1"></i>
                         DataTable Examples
                     </div>
-
-                    <div>
-                        <button type="button" class="btn btn-primary" id="btn-modal" data-bs-toggle="modal" data-bs-target="#modalOrden">Agregar</button>
-                    </div>
-
-                    <!--                       -->
-                    <form id="frmAgregarOrden" method="post" onsubmit="return agregarNuevoAuditoria()">
-                        <!-- The Modal -->
-                        <div class="modal" id="modalOrden">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-
-                                    <!-- Modal Header -->
-                                    <div class="modal-header bg-black text-white">
-                                        <h4 class="modal-title">Agregar Orden de Compra</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <input type="text" id="idDetalle" name="idDetalle" hidden>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <label for="Pedido" style="margin: 10px 0px 0px 0px">Numero Pedido</label>
-                                                <select class="form-select" name="Pedido" id="Pedido" style="width: 100%;" required>
-                                                    <option value="">Selecciona Pedido</option>
-                                                    <?php foreach ($res as $opciones) { ?>
-                                                        <option value="<?php echo $opciones['CFOLIO'] ?>"><?php echo $opciones['CFOLIO'] ?> </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="Orden" style="margin: 10px 0px 0px 0px">Codigo Orden de Compra</label>
-                                                <input type="text" style="height: 29px;" class="form-control" id="Orden" name="Orden">
-                                            </div>
-
-
-                                        </div>
-
-                                        <br> <br>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <input type="file" class="form-control" id="archivo" name="archivo">
-                                                <input type="text" id="urlEstado" name="urlEstado" hidden>
-                                            </div>
-                                        </div>
-                                        <br> <br>
-
-                                    </div>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" id="btnsalir" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <input type="submit" class="btn btn-primary" value="Agregar">
-                                </div>
-
-                            </div>
-                        </div>
                 </div>
-                </form>
+
+                <div>
+                    <button type="button" class="btn btn-primary" id="btn-modal" data-bs-toggle="modal" data-bs-target="#modalOrden">Agregar</button>
+                </div>
+
+                <!--                       -->
+                <!--   <form action="guardar_orden.php" method="POST" enctype="multipart/form-data">-->
+                <!-- The Modal -->
+                <div class="modal" id="modalOrden">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-black text-white">
+                                <h4 class="modal-title">Agregar Orden de Compra</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form action="guardar_orden.php" method="POST" enctype="multipart/form-data">
+                                    <input type="text" id="idDetalle" name="idDetalle" hidden>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="Pedido" style="margin: 10px 0px 0px 0px">Numero Pedido</label>
+                                            <select class="form-select" name="Pedido" id="Pedido" style="width: 100%;" required>
+                                                <option value="">Selecciona Pedido</option>
+                                                <?php foreach ($res as $opciones) { ?>
+                                                    <option value="<?php echo $opciones['CFOLIO'] ?>"><?php echo $opciones['CFOLIO'] ?> </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="Orden" style="margin: 10px 0px 0px 0px">Codigo Orden de Compra</label>
+                                            <input type="text" style="height: 29px;" class="form-control" id="Orden" name="Orden">
+                                        </div>
+
+
+                                    </div>
+
+                                    <br> <br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input type="file" class="form-control" id="archivo" name="archivo">
+                                            <input type="text" id="urlEstado" name="urlEstado" hidden>
+                                        </div>
+                                    </div>
+                                    <br> <br>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" id="btnsalir" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary"> Guardar </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -607,7 +608,7 @@ $res = $conexion->query($sql);
     </div>
     </main>
 
-    
+
 
     </div>
     </div>
