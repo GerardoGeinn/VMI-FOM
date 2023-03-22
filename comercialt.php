@@ -49,14 +49,14 @@ $respuesta = 0;
     
     <style>
         thead{
-            background-color:#212529;   
-            color:white;
+            /* background-color:#212529;    */
+            color:#212529;
             text-align: center;
-            font-size: .70rem;
+            font-size: .80rem;
         }
         tbody{
             text-align: center;
-            font-size: .70rem;
+            font-size: .67rem;
         }
     </style>
     </head>
@@ -78,12 +78,13 @@ $respuesta = 0;
                             <!--empieza tabla-->
                             <div class="container mb-4">
                                 <div class="card-header">
+                                <br>
                                     <i class="fas fa-table me-1"></i>
                                    INFORMACIÓN COMERCIAL
-                                    
+                                    <br>
                                     <div class="row">
-                                    <div class="col-lg-12 col-sm-12">            
-                                    <table id="tablaReport" class="table table-hover table-bordered" cellspacing="0" width="100%">
+                                    <div class="col-lg-12 col-sm-12"><br>       
+                                    <table id="tablaReport" class="table table-hover " cellspacing="0" width="100%">
                                     <thead>         
                                         
                                         <th>SERIE</th>
