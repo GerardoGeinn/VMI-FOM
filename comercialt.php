@@ -76,7 +76,7 @@ $respuesta = 0;
                      
                         
                             <!--empieza tabla-->
-                            <div class="container mb-4">
+                            <div class="card-body">
                                 <div class="card-header">
                                 <br>
                                     <i class="fas fa-table me-1"></i>
