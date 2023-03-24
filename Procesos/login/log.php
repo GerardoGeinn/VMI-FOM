@@ -16,6 +16,3 @@
         session_start();
         $_SESSION["usuario"] = htmlentities($_POST['inputUsuario']);
         $_SESSION["pass"] = htmlentities($_POST['inputPassword']);
-    
-
-?>

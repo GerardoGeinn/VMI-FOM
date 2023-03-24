@@ -162,7 +162,7 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                                         <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                                         <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</a>
                                     </td>
-                                    
+
 
                                 </tr>
                             <?php } ?>
@@ -180,12 +180,15 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
     </div>
     </div>
 
-    <?php   
+    <?php
     include "footer.php";
-   include "editaModal.php";
+    include "editaModal.php";
     ?>
 
+    <script>
+        let editaModal = document.getElementById('editaModal');
 
+    </script>
 
 </body>
 
