@@ -88,7 +88,7 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <form action="guardar_orden.php" method="POST" enctype="multipart/form-data">
-                                    <input type="text" id="idDetalle" name="idDetalle" hidden>
+                                    <input type="text" id="id" name="id" hidden>
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="Pedido" style="margin: 10px 0px 0px 0px">Numero Pedido</label>
@@ -159,7 +159,7 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                                     <td><?= $opciones_orden['orden_compra']; ?> </td>
                                     <td><?= $opciones_orden['fecha_creacion']; ?> </td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal" databs-id= "<?= $opciones_orden['id_orden']; ?>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                                         <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</a>
                                     </td>
 
@@ -186,7 +186,36 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
     ?>
 
     <script>
-        let editaModal = document.getElementById('editaModal');
+        let editaModal = document.getElementById('editaModal')
+
+        editaModal.addEventListener('shown.bs.modal', event => {
+
+            let button = event.relatedTarget
+            let id = button.getAttribute('data-bs-id')
+
+            let inputId = editaModal.querySelector('.modal-body #idDetalle')
+            let inputFolio = editaModal.querySelector('.modal-body #Pedido')
+            let inputOrden = editaModal.querySelector('.modal-body #Orden')
+
+
+            let url = "getOrden.php"
+            let formData = new FormData()
+            formData.append('id',id)
+          
+
+            fetch(url, {
+                method: "POST",
+                body: formData
+            }).then(response => response.json())
+ 
+            .then(data =>{
+
+                inputOrden.value = data.orden_compra
+                
+
+            }).catch(err => console.log(err))
+
+        })
 
     </script>
 
