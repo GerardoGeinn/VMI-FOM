@@ -133,6 +133,7 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                     <table id="datatablesSimple" class="table align-middle">
                         <thead>
                             <tr>
+                                <th>Agregar</th>
                                 <th>Id Orden</th>
                                 <th>Folio</th>
                                 <th>Orden de Compra</th>
