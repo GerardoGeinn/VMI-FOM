@@ -154,6 +154,11 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
 
                             <?php foreach ($resOrdenes as $opciones_orden) { ?>
                                 <tr>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#agregarModal" onclick="DatoIdOrden(<?= $opciones_orden['id_orden']; ?>)">
+                                        <i class="fa-solid fa-plus"></i>
+                                        </a>
+                                    </td>
                                     <td><?= $opciones_orden['id_orden']; ?> </td>
                                     <td><?= $opciones_orden['folio']; ?> </td>
                                     <td><?= $opciones_orden['orden_compra']; ?> </td>
@@ -183,7 +188,10 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
     <?php
     include "footer.php";
     include "editaModal.php";
+    include "agregarModal.php";
     ?>
+
+<script src="try.js"></script>
 
     <script>
         let editaModal = document.getElementById('editaModal')
