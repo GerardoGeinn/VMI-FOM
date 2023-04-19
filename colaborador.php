@@ -16,9 +16,10 @@ $conVMI = new Conexion();
 $conexionVMI = $conVMI->conectar();
 
 
-$sql = "SELECT TOP 50 CONVERT(int,CFOLIO) AS CFOLIO
+$sql = "SELECT TOP 50 CONVERT(INT,CFOLIO) AS CFOLIO
 FROM admDocumentos
-WHERE CCANCELADO = 0 AND CIDDOCUMENTODE = 2";
+WHERE CCANCELADO = 0 AND CIDDOCUMENTODE = 2
+ORDER BY CSERIEDOCUMENTO";
 $res = $conexion->query($sql);
 
 $sqlOrdenes = "SELECT id_orden,folio,orden_compra,fecha_creacion FROM vmi_ordenes";
@@ -159,7 +160,7 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                                     <td><?= $opciones_orden['orden_compra']; ?> </td>
                                     <td><?= $opciones_orden['fecha_creacion']; ?> </td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal" databs-id= "<?= $opciones_orden['id_orden']; ?>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal" onclick="DatoIdOrden(<?= $opciones_orden['id_orden']; ?>,'<?= $opciones_orden['orden_compra']; ?>')"><i class="fa-solid fa-pen-to-square" ></i> Editar</a>
                                         <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</a>
                                     </td>
 
@@ -185,39 +186,18 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
     include "editaModal.php";
     ?>
 
-    <script>
-        let editaModal = document.getElementById('editaModal')
-
-        editaModal.addEventListener('shown.bs.modal', event => {
-
-            let button = event.relatedTarget
-            let id = button.getAttribute('data-bs-id')
-
-            let inputId = editaModal.querySelector('.modal-body #idDetalle')
-            let inputFolio = editaModal.querySelector('.modal-body #Pedido')
-            let inputOrden = editaModal.querySelector('.modal-body #Orden')
+<Script>
 
 
-            let url = "getOrden.php"
-            let formData = new FormData()
-            formData.append('id',id)
-          
+function DatoIdOrden(id,folio){
+    $('#idDetalle').val(id);
+    $('#orden').val(folio);
+}
 
-            fetch(url, {
-                method: "POST",
-                body: formData
-            }).then(response => response.json())
- 
-            .then(data =>{
 
-                inputOrden.value = data.orden_compra
-                
 
-            }).catch(err => console.log(err))
+</Script>
 
-        })
-
-    </script>
 
 </body>
 

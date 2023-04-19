@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
 
-                <input type="text" id="idDetalle" name="idDetalle" hidden>
+                <input type="text" id="idDetalle" name="idDetalle"  value="">
                 <div class="row">
                     <div class="col-6">
                         <label for="Pedido" style="margin: 10px 0px 0px 0px">Numero Pedido</label>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-6">
                         <label for="Orden" style="margin: 10px 0px 0px 0px">Codigo Orden de Compra</label>
-                        <input type="text" style="height: 29px;" class="form-control" id="Orden" name="Orden">
+                        <input type="text" style="height: 29px;"id="orden" name="orden">
                     </div>
 
 
