@@ -1,3 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 <!-- Modal -->
 <div class="modal fade" id="editaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -20,7 +31,7 @@
                         </select>
                     </div>
                     <div class="col-6">
-                        <label for="Orden" style="margin: 10px 0px 0px 0px">Codigo Orden de Compra</label>
+                        <label for="orden" style="margin: 10px 0px 0px 0px">Codigo Orden de Compra</label>
                         <input type="text" style="height: 29px;"id="orden" name="orden">
                     </div>
 
@@ -46,3 +57,8 @@
         </div>
     </div>
 </div>
+
+<script src="try.js"></script>
+
+</body>
+</html>

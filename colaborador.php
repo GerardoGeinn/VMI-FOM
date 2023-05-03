@@ -166,8 +166,8 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
                                     <td><?= $opciones_orden['orden_compra']; ?> </td>
                                     <td><?= $opciones_orden['fecha_creacion']; ?> </td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal" onclick="DatoIdOrden(<?= $opciones_orden['id_orden']; ?>,'<?= $opciones_orden['orden_compra']; ?>')"><i class="fa-solid fa-pen-to-square" ></i> Editar</a>
-                                        <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                        <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editaModal" onclick="DatoIdOrdenEditar(<?= $opciones_orden['id_orden']; ?>,'<?= $opciones_orden['orden_compra']; ?>')"><i class="fa-solid fa-pen-to-square" ></i> Editar</a>
+                                        <a href="#" class="btn btn-sm btn-danger"  data-toggle="modal" data-target="#eliminaModal" onclick="DatoIdOrdenEliminar(<?= $opciones_orden['id_orden']; ?>)"><i class="fa-solid fa-trash"></i> Eliminar</a>
                                     </td>
 
 
@@ -190,22 +190,12 @@ $resOrdenes = $conexionVMI->query($sqlOrdenes);
     <?php
     include "footer.php";
     include "editaModal.php";
+    include "eliminaModal.php";
     include "agregarModal.php";
     ?>
 
 <script src="try.js"></script>
 
-<Script>
-
-
-function DatoIdOrden(id,folio){
-    $('#idDetalle').val(id);
-    $('#orden').val(folio);
-}
-
-
-
-</Script>
 
 
 </body>
