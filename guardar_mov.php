@@ -31,7 +31,7 @@ $stmt-> execute(['id_orden' => $idOrden, 'codigo' => $codigo,'descripcion' => $d
 
 
 
-header('Location: agregarModal.php');
+header('Location: colaborador.php');
 
 ?>
 
