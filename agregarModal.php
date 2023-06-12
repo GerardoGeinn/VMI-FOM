@@ -33,9 +33,13 @@
                                     <input type="text" style="height: 29px;" class="form-control" id="codigosa" name="codigosa" required>
                                 </div>
                                 <div class="col-6">
+                                    <label for="stock" style="margin: 10px 0px 0px 0px">Codigo Comercial</label>
+                                    <input type="text" style="height: 29px;" class="form-control" id="CodigoComercial" name="CodigoComercial" required>
+                                </div>
+                                <div class="col-6">
                                     <label for="descripcionp" style="margin: 10px 0px 0px 0px">Descripción de producto </label>
                                     <input type="text" style="height: 29px;" class="form-control" id="descripcionp" name="descripcionp" required>
-                                </div>
+                                </div>                             
                                 <div class="col-6">
                                     <div  id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
                                     <label for="fecha" style="margin: 10px 0px 0px 0px">Fecha orden de compra</label>            
