@@ -6,7 +6,8 @@ $resp="";
     $resp = "SELECT TOP 100
     DOC.CSERIEDOCUMENTO AS SERIE, CONVERT(INT,DOC.CFOLIO) AS FOLIO, ISNULL(AG.CNOMBREAGENTE,'')AS AGENTE, DOC.CTOTALUNIDADES AS CANTIDAD, 
     PRO.CCODIGOPRODUCTO AS CODIGO,PRO.CNOMBREPRODUCTO AS DESCRIPCION, ALM.CNOMBREALMACEN AS ALMACEN, FORMAT(MOV.CPRECIO,'C','en-us') AS PRECIOP,  
-    CONVERT(VARCHAR,DOC.CFECHA,103) AS FECHA, DOC.CTOTAL, FORMAT(DOC.CTOTAL, 'C','en-us') AS MONTOT
+    CONVERT(VARCHAR,DOC.CFECHA,103) AS FECHA, DOC.CTOTAL, FORMAT(DOC.CTOTAL, 'C','en-us') AS MONTOT,
+	(CASE WHEN DOC.CIDMONEDA = 1 THEN 'MXN'	WHEN DOC.CIDMONEDA = 2 THEN 'USD' END) AS MONEDA 
     FROM admProductos PRO
     LEFT OUTER JOIN dbo.admMovimientos MOV ON PRO.CIDPRODUCTO= MOV.CIDPRODUCTO 
     LEFT OUTER JOIN dbo.admDocumentos DOC ON MOV.CIDDOCUMENTO = DOC.CIDDOCUMENTO 
@@ -98,7 +99,7 @@ $respuesta = 0;
                                         <th>FECHA</th>
                                         <th>PRECIO PRODUCTO</th>
                                         <th>MONTO TOTAL</th>
-                                                
+                                        <th>MONEDA</th>
                                     </thead>
                                     <tbody> 
                                     <?php foreach ($respuesta as $mostrar): ?>
@@ -113,6 +114,7 @@ $respuesta = 0;
                                     <td><?php echo $mostrar->FECHA ?></td>
                                     <td><?php echo $mostrar->PRECIOP ?></td>
                                     <td><?php echo $mostrar->MONTOT ?></td>
+                                    <td><?php echo $mostrar->MONEDA ?></td>
                                     </tr>
                                     <?php endforeach; ?>
                                     </tbody>
